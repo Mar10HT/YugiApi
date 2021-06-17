@@ -1,8 +1,9 @@
 import React from "react"
 import { StyleSheet, Text, View } from 'react-native';
 
-const Home = () =>{
+const searchCard = ( ) =>{
+
 
 }
 
-const styles = StyleSheet.create({});
+export default searchCard;
