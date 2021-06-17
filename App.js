@@ -6,7 +6,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Millenium Database</Text>
-      <Text>Test</Text>
+      <Text>Test-Change</Text>
       <StatusBar style="auto" />
     </View>
   );
