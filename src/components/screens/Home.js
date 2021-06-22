@@ -24,7 +24,7 @@ const Home = () =>{
             <Text>
                 Informacion de Yu-Gi-Oh!
             </Text>
-            {card ? <Text>{card.data.name}</Text> : <Text>Not found</Text>}
+            
         </View>
     );
 }
