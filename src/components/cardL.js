@@ -6,9 +6,9 @@ const CardList = ({card}) =>{
 
     return(
         <View>
-            {card.data.map((id, name, race, type, image) => {
-                return <Card id = {info.id} name={info.name}  
-                type = {info.type} race = {info.race} image={info.card_images.image_url}  />;
+            {card.meta && card.data.map((card) => {
+                return <Card id = {card.id} name={card.name}  
+                type = {card.type} race = {card.race} image={card.id} key = {card.id}/>;
             })}
         </View>
     )

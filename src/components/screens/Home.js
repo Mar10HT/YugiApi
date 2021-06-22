@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import fetchCards  from "../../api"
 import CardList from "../cardL";
-import Card from "../card"
+
+
 
 const Home = () =>{
     const [card , setCard] = useState({});
@@ -24,7 +25,7 @@ const Home = () =>{
             <Text>
                 Informacion de Yu-Gi-Oh!
             </Text>
-            
+           <CardList card={card}/>
         </View>
     );
 }
