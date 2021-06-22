@@ -1,9 +1,16 @@
-import React from "react"
-import { StyleSheet, Text, View } from 'react-native';
+const yugiapi = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
 
-const searchCard = ( ) =>{
+const fetchCards = async () =>{
+    //const cardName = prompt("Nombre de la carta");
+    const cardName = "Dark Magician"
+    const endpoint  = `${yugiapi}?name=${cardName}`;
 
+    const response = await fetch(endpoint);
+    const data = await response.json();
 
-}
+    
+    console.log(data);
 
-export default searchCard;
+    return(data);
+};
+export default fetchCards;
