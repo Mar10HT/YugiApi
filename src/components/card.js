@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from "react-native";
+import getEnvVars from '../../enviroment';
 
+const {imageUrl} = getEnvVars();
 
 const Card = ({id, name, image, type, race}) =>{
     return(
@@ -9,7 +11,7 @@ const Card = ({id, name, image, type, race}) =>{
             <Text style= {styles.name}>{name}</Text>
             <Image style= {styles.image} 
             source = {{
-             uri : `https://storage.googleapis.com/ygoprodeck.com/pics/${image}.jpg` }}/>
+             uri : `${imageUrl}${image}.jpg` }}/>
             <Text style= {styles.type}>{type}</Text>
             <Text style= {styles.race}>{race}</Text>
          </View>
@@ -27,8 +29,9 @@ const styles = StyleSheet.create({
         fontSize: 18
     },
     image: {
-        width: 340,
-        height: 500,
+        width: "auto",
+        height: 300,
+        resizeMode: "center",
     },
     id: {
         fontSize:16,
