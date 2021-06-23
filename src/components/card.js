@@ -20,13 +20,11 @@ const styles = StyleSheet.create({
     container: {
         padding: 10,
         margin: 10,
-        boderColor:'Black',
         borderWidth:1,
         display: 'flex',
     },
     name: {
-        fontSize: 18,
-        fontWeigth: 'bold',
+        fontSize: 18
     },
     image: {
         width: 340,
