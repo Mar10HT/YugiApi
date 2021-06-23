@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import fetchCards  from "../../api"
 import CardList from "../cardL";
 
@@ -21,12 +21,12 @@ const Home = () =>{
     
 
     return(
-        <View>
+        <ScrollView>
             <Text>
                 Informacion de Yu-Gi-Oh!
             </Text>
            <CardList card={card}/>
-        </View>
+        </ScrollView>
     );
 }
 const style = StyleSheet.create({});
