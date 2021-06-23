@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import fetchCards  from "../../api"
 import CardList from "../cardL";
 
 
 
-const Home = () =>{
+const Home = ({ navigation }) =>{
     const [card , setCard] = useState({});
 
     const getCard = async () =>{
@@ -22,10 +22,7 @@ const Home = () =>{
 
     return(
         <ScrollView>
-            <Text>
-                Informacion de Yu-Gi-Oh!
-            </Text>
-           <CardList card={card}/>
+           <CardList card={card} navigation={navigation} />
         </ScrollView>
     );
 }

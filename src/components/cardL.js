@@ -1,14 +1,19 @@
 import React from 'react';
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import Card from "../components/card"
 
-const CardList = ({card}) =>{
+const CardList = ({card, navigation}) =>{
 
     return(
         <View>
-            {card.meta && card.data.map((card, index) => {
-                return <Card id = {card.id} name={card.name}  
-                type = {card.type} race = {card.race} image={card.id} key = {index}/>;
+            {card.meta && 
+                card.data.map((card, index) => {
+                    return (
+                        <TouchableOpacity key = {index} onPress={() => {navigation.navigate("Card Details", { card })}}>
+                            <Card id = {card.id} name={card.name}  
+                            type = {card.type} race = {card.race} image={card.id}/>
+                    </TouchableOpacity>
+                );
             })}
         </View>
     )

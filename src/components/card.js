@@ -1,17 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from "react-native";
-import getEnvVars from '../../enviroment';
-
-const {imageUrl} = getEnvVars();
+import { StyleSheet, Text, View } from "react-native";
+import CardImage from './CardImage'
 
 const Card = ({id, name, image, type, race}) =>{
     return(
          <View style= {styles.container}>
             <Text style= {styles.id}>{id}</Text>
             <Text style= {styles.name}>{name}</Text>
-            <Image style= {styles.image} 
-            source = {{
-             uri : `${imageUrl}${image}.jpg` }}/>
+            <CardImage image={image}/>
             <Text style= {styles.type}>{type}</Text>
             <Text style= {styles.race}>{race}</Text>
          </View>
@@ -27,11 +23,6 @@ const styles = StyleSheet.create({
     },
     name: {
         fontSize: 18
-    },
-    image: {
-        width: "auto",
-        height: 300,
-        resizeMode: "center",
     },
     id: {
         fontSize:16,
