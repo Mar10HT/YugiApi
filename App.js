@@ -14,8 +14,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name="Millenium Database" component={Home}/>
         <Stack.Screen name="Search" component={SearchCard}/>
-        <Stack.Screen name="Millenium Database" component={Home}/>
         <Stack.Screen name="Card Details" component={CardDetails}/>
       </Stack.Navigator>
     </NavigationContainer>

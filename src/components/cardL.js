@@ -10,7 +10,7 @@ const CardList = ({card, navigation}) =>{
                 card.data.map((card, index) => {
                     return (
                         <TouchableOpacity key = {index} onPress={() => {navigation.navigate("Card Details", { card })}}>
-                            <Card id = {card.id} name={card.name}  
+                            <Card desc = {card.desc} name={card.name}  
                             type = {card.type} race = {card.race} image={card.id}/>
                     </TouchableOpacity>
                 );
