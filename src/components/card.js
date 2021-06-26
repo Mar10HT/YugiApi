@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 20,
         textAlign:'center',
-        fontWeight: 700,
         position: 'relative',
         
     },
