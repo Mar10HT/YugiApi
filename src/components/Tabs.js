@@ -2,7 +2,7 @@ import React from "react";
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { StyleSheet } from 'react-native';
 
-import Home from "./screens/Home";
+import HomeStackScreen from "./screens/HomeStack";
 import SearchCard from "./screens/SearchCardScreen";
 import FavoriteCards from "./screens/Favorites";
 
@@ -15,17 +15,17 @@ const Tab = createMaterialBottomTabNavigator();
 const Tabs = () => {
     return(
         <Tab.Navigator style={styles.tab}
-        initialRouteName="Home"
+        initialRouteName="Search"
         activeColor="#0d82ff"
         inactiveColor="#ffffff"
         barStyle={{ backgroundColor: '#150061'}}
         >
             <Tab.Screen 
                 name="Home" 
-                component={Home} 
+                component={HomeStackScreen}
                 options={{
                     tabBarLabel: '',
-                    tabBarIcon: ({color, size}) => (
+                    tabBarIcon: ({color}) => (
                         <Entypo name="home" size={24} color={color} />
                     ),
                 }}
@@ -35,7 +35,7 @@ const Tabs = () => {
                 component={SearchCard} 
                 options={{
                     tabBarLabel: '',
-                    tabBarIcon: ({color, size}) => (
+                    tabBarIcon: ({color}) => (
                         <FontAwesome name="search" size={24} color={color} />
                     ),
                 }}
@@ -45,7 +45,7 @@ const Tabs = () => {
                 component={FavoriteCards} 
                 options={{
                     tabBarLabel: '',
-                    tabBarIcon: ({color, size}) => (
+                    tabBarIcon: ({color}) => (
                         <AntDesign name="star" size={24} color={color} />
                     ),
                 }}
@@ -54,10 +54,6 @@ const Tabs = () => {
     )
 }
 
-const styles = StyleSheet.create({
-    tab: {
-        backgroundColor: '#1f0075',
-    }
-})
+const styles = StyleSheet.create({});
 
 export default Tabs;

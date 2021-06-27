@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Searchbar } from 'react-native-paper';
-import Tabs from '../Tabs';
+import TopBar from '../TopBar';
 
 const SearchCard = () => {
-
-    const [selectedCardType, setSelectedCardType] = useState();
+    
     const [searchQuery, setSearchQuery] = useState('');
     const onChangeSearch = query => setSearchQuery(query);
 
     return(
         <View>
+            <TopBar/>
             <Searchbar style={styles.searchbar}
                 placeholder="Search Cards By Name"
                 onChangeText={onChangeSearch}

@@ -1,16 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import TopBar from '../TopBar';
 
 const FavoriteCards = () => {
     return(
-        <View style={styles.container}>
-            <Text>Favorites!</Text>
+        <View>
+            <TopBar/>
+            <Text style={styles.title}>Favorites!</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
+   title: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',

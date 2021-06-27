@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import CardImage from '../CardImage'
 
-const CardDetails = ({ route }) => {
+const DetailsCard = ({ route }) => {
     const { card } = route.params;
     
     return(
@@ -16,4 +16,4 @@ const CardDetails = ({ route }) => {
 const styles = StyleSheet.create({
 });
 
-export default CardDetails;
+export default DetailsCard;
