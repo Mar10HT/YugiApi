@@ -1,17 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View} from "react-native";
+import { Card } from 'react-native-paper';
 import CardImage from './CardImageSearch'
+import theme from "../theme";
 
 const CardSearch = ({name, image, type, level}) =>{
     return(
-        <View style= {styles.container}>
+        <Card style= {styles.container}>
             <CardImage image={image}/>
             <View style={styles.container2}>
-                <Text style={styles.name}>{name}</Text>
-                <Text style={styles.level}>Level: {level}</Text>
-                <Text style={styles.name}>Card Type: {type}</Text>
+                <Card.Title title={name} style={styles.name} />
+                <Card.Content>
+                    <Text style={styles.text}>Level: {level}</Text>
+                    <Text style={styles.text}>Card Type: {type}</Text>
+                </Card.Content>
             </View>
-         </View>
+         </Card>
          
          );
 }
@@ -25,22 +29,28 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         borderRadius: 25/2,
-        borderColor: '#11007E',
+        borderColor: theme.colors.blue,
+        shadowColor: "#000",
+        shadowOffset: {
+	        width: 0,
+	        height: 9,
+        },
+        shadowOpacity: 0.50,    
+        shadowRadius: 12.35,
+        elevation: 10,
     },
     container2: {
         display: 'flex',
         height: 'auto',
         alignItems: 'center',
-        bottom: '90%',
+        bottom: '110%',
     },
     name: {
-        position: 'relative',
-        marginLeft: 10,
+        left: '90%',
         fontWeight: 'bold',
     },
-    level: {
-        position: 'relative',
-        marginLeft: 10,
+    text: {
+        right: '11%'
     }
 });
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Title } from 'react-native-paper';
 import CardSearch from "../components/CardSearch"
+import theme from "../theme";
 
 const CardSearchList = ({ card, navigation }) =>{
     const emptyFlatList = (
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         borderWidth: 2,
         borderRadius: 10,
-        borderColor: "#9a0056"
+        borderColor: theme.colors.red
     },
     title: {
         flex: 1,
