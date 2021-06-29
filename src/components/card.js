@@ -18,7 +18,7 @@ const Card = ({desc, name, image, type, race}) =>{
             </View>
          </View>
          
-         ); 
+         );
 }
 
 const styles = StyleSheet.create({

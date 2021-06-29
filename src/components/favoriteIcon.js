@@ -13,7 +13,6 @@ const FavoriteIcon = () =>{
 const styles = StyleSheet.create({
     container:{
         alignSelf:"flex-end"
-
     }   
 });
 
