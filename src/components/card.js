@@ -3,12 +3,12 @@ import { StyleSheet, Text, View} from "react-native";
 import CardImage from './CardImage'
 import FavoriteIcon from './favoriteIcon';
 
-const Card = ({desc, name, image, type, race}) =>{
+const Card = ({desc, name, image, type, race, OnPress}) =>{
     return(
         <View style= {styles.container}>
             <Text style= {styles.name}>{name}</Text>
             <CardImage image={image}/>
-            <FavoriteIcon/>
+            <FavoriteIcon  OnPress={() => {}}/>
             <View style = {styles.info} >
                 
                 <Text style= {styles.type}>Card Type: {type}</Text>
@@ -45,10 +45,9 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent:'space-evenly',
-        
         height:300,
-
-
+        paddingBottom:20,
+        
     },
     name: {
         fontSize: 20,

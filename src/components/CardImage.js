@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         borderWidth:3,
         alignSelf:"center",
         position: 'relative',
-        top: 45,
+        top: 20,
     },
 });
 

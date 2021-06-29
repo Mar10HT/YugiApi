@@ -2,7 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import TopBar from '../TopBar';
 
-const FavoriteCards = () => {
+
+
+const FavoriteCards = (route) => {
+
     return(
         <View>
             <TopBar/>
