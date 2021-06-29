@@ -1,39 +1,30 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { Searchbar } from 'react-native-paper';
-import TopBar from '../TopBar';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import SearchCard from './SearchCard';
+import DetailsCard from './CardDetails';
+import Logo from '../Logo';
 
-const SearchCard = () => {
-    
-    const [searchQuery, setSearchQuery] = useState('');
-    const onChangeSearch = query => setSearchQuery(query);
+const HomeStack = createStackNavigator();
 
-    return(
-        <View>
-            <TopBar/>
-            <Searchbar style={styles.searchbar}
-                placeholder="Search Cards By Name"
-                onChangeText={onChangeSearch}
-                value={searchQuery}
-            />
-            <Text style={styles.cardType}>CardType</Text>
-        </View>
+const SearchCardScreen = () => {
+    return (
+        <HomeStack.Navigator screenOptions={{
+            headerStyle: {
+              backgroundColor: '#150061',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {fontWeight: 'bold'},
+        }}>
+            <HomeStack.Screen name="Search" component={SearchCard} options={{
+                title: 'Millenium Database',
+                headerLeft: () => <Logo/>
+            }}/>
+            <HomeStack.Screen name="Card Search" component={DetailsCard} options={{
+                headerTitle: false,
+                headerRight: () => <Logo/>
+            }}/>
+        </HomeStack.Navigator>
     )
 }
 
-const styles = StyleSheet.create({
-    searchbar: {
-        marginTop: 35,
-        marginHorizontal: 10,
-        borderWidth: 2,
-        borderColor: '#11007e',
-        borderRadius: 30,
-    },
-    cardType: {
-        fontSize: 20,
-        marginTop: 40,
-        marginLeft: 20,
-    }
-});
-
-export default SearchCard;
+export default SearchCardScreen;

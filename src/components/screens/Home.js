@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, ScrollView, Text } from 'react-native';
-import fetchCards  from "../../api"
+import { StyleSheet, View} from 'react-native';
+import { Title } from "react-native-paper";
+import { fetchCards } from "../../api"
 import CardList from "../cardL";
 
 const Home = ({ navigation }) =>{
@@ -12,17 +13,16 @@ const Home = ({ navigation }) =>{
         setCard(response);
     }
 
-    
     useEffect(() => {
         getCard();
     }, [])
     
 
     return(
-        <ScrollView>
-            <Text style={style.title}>Newest Cards</Text>
-            <CardList card={card} navigation={navigation} />
-        </ScrollView>
+        <View>
+            <Title style={style.title}>Newest Cards</Title>
+            <CardList card={card} navigation={navigation}/>
+        </View>
     );
 }
 const style = StyleSheet.create({

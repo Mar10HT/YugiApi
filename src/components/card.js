@@ -18,7 +18,7 @@ const Card = ({desc, name, image, type, race, OnPress}) =>{
             </View>
          </View>
          
-         ); 
+         );
 }
 
 const styles = StyleSheet.create({

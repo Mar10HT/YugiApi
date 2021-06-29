@@ -12,8 +12,12 @@ const FavoriteIcon = ({favorite, OnPress}) =>{
 
 const styles = StyleSheet.create({
     container:{
+<<<<<<< HEAD
         alignSelf:"flex-end",
         bottom:"45%"
+=======
+        alignSelf:"flex-end"
+>>>>>>> b62356b678f1571f2eb34241625470b68e638e79
     }   
 });
 

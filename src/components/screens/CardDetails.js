@@ -1,14 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Title } from "react-native-paper";
 import CardImage from '../CardImage'
 
 const DetailsCard = ({ route }) => {
-    const { card } = route.params;
+    const { item } = route.params;
     
     return(
         <View>
-            <Text>{card.name}</Text>
-            <CardImage image={card.id}/>
+            <Title>{item.name}</Title>
+            <CardImage image={item.id}/>
         </View>
     )
 }

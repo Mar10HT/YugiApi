@@ -21,7 +21,8 @@ function HomeStackScreen() {
            headerLeft: () => <Logo/>
            }}/>
        <HomeStack.Screen name="Card Details" component={DetailsCard} options={{
-           title: 'Card Details'
+           headerTitle: false,
+           headerRight: () => <Logo/>
            }}/>
       </HomeStack.Navigator>
      );

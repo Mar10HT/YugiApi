@@ -3,7 +3,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { StyleSheet } from 'react-native';
 
 import HomeStackScreen from "./screens/HomeStack";
-import SearchCard from "./screens/SearchCardScreen";
+import SearchCardScreen from "./screens/SearchCardScreen";
 import FavoriteCards from "./screens/Favorites";
 
 import { Entypo } from '@expo/vector-icons'; 
@@ -32,7 +32,7 @@ const Tabs = () => {
             />
             <Tab.Screen 
                 name="Search" 
-                component={SearchCard} 
+                component={SearchCardScreen} 
                 options={{
                     tabBarLabel: '',
                     tabBarIcon: ({color}) => (
