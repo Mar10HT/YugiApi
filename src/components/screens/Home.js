@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View} from 'react-native';
-import { Title } from "react-native-paper";
+import { Title} from "react-native-paper";
 import { fetchCards } from "../../api"
 import CardList from "../cardL";
 

@@ -7,7 +7,7 @@ const {apiUrl} = getEnvVars();
 
 export const fetchCards = async () =>{
     try {
-        const endpoint  = `${apiUrl}cardinfo.php?num=10&offset=0&sort=new`;
+        const endpoint  = `${apiUrl}cardinfo.php?num=5&offset=0&sort=new`;
 
         const response = await fetch(endpoint);
         const data = await response.json();

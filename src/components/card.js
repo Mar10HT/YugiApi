@@ -1,14 +1,21 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View} from "react-native";
 import CardImage from './CardImage'
-import FavoriteIcon from './favoriteIcon';
+import { IconButton,  } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/AntDesign';
 
-const Card = ({desc, name, image, type, race, OnPress}) =>{
+
+
+
+
+
+const Card = ({desc, name, image, type, race}) =>{
+    let favorite = false;
     return(
         <View style= {styles.container}>
             <Text style= {styles.name}>{name}</Text>
             <CardImage image={image}/>
-            <FavoriteIcon  OnPress={() => {}}/>
+            <IconButton icon = {favorite ? "star" : "star-outline"}  onPress = {(favorite) =>{favorite=true}} color = "orange" size= "38" style = {styles.button}/>
             <View style = {styles.info} >
                 
                 <Text style= {styles.type}>Card Type: {type}</Text>
@@ -38,7 +45,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.50,    
         shadowRadius: 12.35,
         elevation: 19,
-        height:600
+        height:650
         
     },
     info:{
@@ -72,6 +79,11 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         
     },
+    button:{
+        alignSelf:"flex-end",
+        bottom:"45%",
+        
+    }
 });
 
 export default Card;

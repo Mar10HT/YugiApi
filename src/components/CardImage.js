@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import getEnvVars from '../../enviroment';
 
@@ -16,16 +16,15 @@ const CardImage = ({image}) => {
 
 const styles = StyleSheet.create({
     image: {
-        width: 170,
-        height: 250,
-        resizeMode: "center",
-        borderWidth:2,
+        width: 190,
+        height: 270,
         borderRadius: 25/2,
         borderColor: '#11007E',
-        borderWidth:3,
         alignSelf:"center",
         position: 'relative',
         top: 20,
+        borderWidth: 2,
+        resizeMode:"contain",
     },
 });
 

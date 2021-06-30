@@ -2,9 +2,9 @@ import React from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'; 
 
-const FavoriteIcon = ({favorite, OnPress}) =>{
+const FavoriteIcon = ({favorite}) =>{
     return(
-     <TouchableOpacity  style = {styles.container} onPress={OnPress}>
+     <TouchableOpacity  style = {styles.container} >
          <AntDesign name={favorite ? "star" : "staro"} size={32} color="orange" />
      </TouchableOpacity>
     );
@@ -12,12 +12,8 @@ const FavoriteIcon = ({favorite, OnPress}) =>{
 
 const styles = StyleSheet.create({
     container:{
-<<<<<<< HEAD
         alignSelf:"flex-end",
         bottom:"45%"
-=======
-        alignSelf:"flex-end"
->>>>>>> b62356b678f1571f2eb34241625470b68e638e79
     }   
 });
 
