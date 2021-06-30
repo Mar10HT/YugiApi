@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
-import { Button, Searchbar } from 'react-native-paper';
+import { ActivityIndicator, Searchbar } from 'react-native-paper';
 import { searchCard } from "../../api";
 import CardSearchList from "../CardSearchList";
 
@@ -40,7 +40,7 @@ const SearchCard = ({ navigation }) => {
                 <Picker.Item label="Spell" value="spell" />
                 <Picker.Item label="Trap" value="trap" />
             </Picker>
-            <CardSearchList card={card} navigation={navigation}/>
+            <CardSearchList card={card} navigation={navigation}/> 
         </View>
     )
 }

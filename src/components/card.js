@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View} from "react-native";
+import { Card } from 'react-native-paper';
+import theme from '../theme';
 import CardImage from './CardImage'
 import { IconButton,  } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -12,18 +14,19 @@ import Icon from 'react-native-vector-icons/AntDesign';
 const Card = ({desc, name, image, type, race}) =>{
     let favorite = false;
     return(
-        <View style= {styles.container}>
-            <Text style= {styles.name}>{name}</Text>
+        <Card style= {styles.container}>
+            <Card.Title title={name} style={styles.name} />
+            <Card.Content>
             <CardImage image={image}/>
             <IconButton icon = {favorite ? "star" : "star-outline"}  onPress = {(favorite) =>{favorite=true}} color = "orange" size= "38" style = {styles.button}/>
             <View style = {styles.info} >
-                
                 <Text style= {styles.type}>Card Type: {type}</Text>
                 <Text style= {styles.race}>Race: {race}</Text>
                 <Text>Card Description</Text>
                 <Text style= {styles.id}>{desc}</Text>
             </View>
-         </View>
+            </Card.Content>
+         </Card>
          
          );
 }
@@ -32,11 +35,11 @@ const styles = StyleSheet.create({
     container: {
         padding: 10,
         margin: 10,
-        borderWidth:1,
+        borderWidth:2,
         display: 'flex',
         flexDirection: 'column',
         borderRadius: 25/2,
-        borderColor: '#11007E',
+        borderColor: theme.colors.blue,
         shadowColor: "#000",
         shadowOffset: {
 	        width: 0,
@@ -57,7 +60,6 @@ const styles = StyleSheet.create({
         
     },
     name: {
-        fontSize: 20,
         textAlign:'center',
         position: 'relative',
         
@@ -86,4 +88,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Card;
+export default Cards;

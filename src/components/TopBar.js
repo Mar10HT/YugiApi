@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Logo from './Logo';
+import theme from "../theme";
 
 const TopBar = () => {
     return (
@@ -16,14 +17,14 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     height: 52,
     flexDirection: 'row',
-    backgroundColor: '#150061',
+    backgroundColor: theme.colors.blue,
     alignItems: 'center',
     paddingVertical: 32,
     paddingRight: 10
   },
   title: {
       fontSize: 18,
-      color: '#ffffff',
+      color: theme.colors.white,
       marginLeft: 7,
       fontWeight: 'bold',
   }

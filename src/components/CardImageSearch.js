@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import getEnvVars from '../../enviroment';
+import theme from "../theme";
 
 const {imageUrl} = getEnvVars();
 
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
         resizeMode: "center",
         borderWidth:2,
         borderRadius: 25/2,
-        borderColor: '#11007E',
+        borderColor: theme.colors.blue,
         borderWidth:3,
     },
 });

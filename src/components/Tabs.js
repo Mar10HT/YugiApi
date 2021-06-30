@@ -1,6 +1,7 @@
 import React from "react";
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { StyleSheet } from 'react-native';
+import theme from "../theme";
 
 import HomeStackScreen from "./screens/HomeStack";
 import SearchCardScreen from "./screens/SearchCardScreen";
@@ -18,7 +19,7 @@ const Tabs = () => {
         initialRouteName="Search"
         activeColor="#0d82ff"
         inactiveColor="#ffffff"
-        barStyle={{ backgroundColor: '#150061'}}
+        barStyle={{ backgroundColor: theme.colors.blue}}
         >
             <Tab.Screen 
                 name="Home" 
