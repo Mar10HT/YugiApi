@@ -31,22 +31,13 @@ const styles = StyleSheet.create({
     },
     image: {
         width: 190,
-        height: 270,
+        height: 250,
         borderRadius: 25/2,
-<<<<<<< HEAD
         borderColor: '#11007E',
         alignSelf:"center",
         position: 'relative',
-        top: 20,
         borderWidth: 2,
         resizeMode:"contain",
-=======
-        borderColor: theme.colors.blue,
-        borderWidth:3,
-        alignSelf:"center",
-        position: 'relative',
-        bottom: 2 
->>>>>>> 969381ca9073bf7d49dd5a342e187af49be90952
     },
 });
 

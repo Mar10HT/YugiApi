@@ -1,24 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { StyleSheet, Text, View} from "react-native";
 import { Card } from 'react-native-paper';
 import theme from '../theme';
 import CardImage from './CardImage'
 import { IconButton,  } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/AntDesign';
 
 
-
-
-
-
-const Card = ({desc, name, image, type, race}) =>{
+const Cards = ({desc, name, image, type, race}) =>{
     let favorite = false;
     return(
         <Card style= {styles.container}>
             <Card.Title title={name} style={styles.name} />
             <Card.Content>
             <CardImage image={image}/>
-            <IconButton icon = {favorite ? "star" : "star-outline"}  onPress = {(favorite) =>{favorite=true}} color = "orange" size= "38" style = {styles.button}/>
+            <IconButton icon = {favorite ? "star" : "star-outline"}  onPress = {(favorite) =>{favorite=true}} color = "orange" size = {38} style = {styles.button}/>
             <View style = {styles.info} >
                 <Text style= {styles.type}>Card Type: {type}</Text>
                 <Text style= {styles.race}>Race: {race}</Text>
