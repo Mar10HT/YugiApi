@@ -28,7 +28,7 @@ const Home = ({ navigation }) =>{
 }
 const style = StyleSheet.create({
     title: {
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: '700',
         marginLeft: 20,
         marginVertical: 20,

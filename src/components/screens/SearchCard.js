@@ -27,10 +27,10 @@ const SearchCard = ({ navigation }) => {
                 placeholder="Search cards by name."
                 value={searchQuery}
                 onChangeText={setSearchQuery}
-                onIconPress={() => navigation.navigate("Card Search", { searchQuery })}
             />
             <Text style={styles.cardType}>CardType</Text>
             <Picker style={styles.picker}
+                mode= "dropdown"
                 selectedValue={selectedType}
                 onValueChange={(itemValue) =>
                 setSelectedType(itemValue)

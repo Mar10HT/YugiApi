@@ -11,7 +11,7 @@ const CardList = ({ card, navigation }) =>{
     );
 
     return(
-        <View>
+        <View style={styles.container}>
             <FlatList 
                 data={card.data}
                 keyExtractor={(item) => item.id.toString() }
@@ -31,6 +31,9 @@ const CardList = ({ card, navigation }) =>{
 }
 
 const styles = StyleSheet.create({
+    container: {
+        marginBottom: 135
+    },
     title: {
         flex: 1,
         justifyContent: 'center',

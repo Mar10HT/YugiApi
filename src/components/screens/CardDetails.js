@@ -8,10 +8,40 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 const DetailsCard = ({ route }) => {
     const { item } = route.params;
-    
-    return(
-        <ScrollView>
-            <Card style={styles.card}>
+
+    const renderWithType = () => {
+        if (item.type === "Spell Card" || item.type === "Trap Card") {
+            return (
+                <Card style={styles.card}>
+                    <View style={styles.info}>
+                        <Card.Title title="Card Information" titleStyle={styles.infotext}/>
+                    </View>
+                    <Card.Content>
+                        <CardImage style={styles.image}
+                            image={item.id}/>
+                    </Card.Content>
+                <View>
+                    <Text style={styles.title}>{item.name}</Text>
+                </View>
+                <View style={styles.line}></View>
+                <View style={styles.adcontainerinfo}>
+                    <Text style={styles.icon}>Type:</Text>
+                    <Text style={styles.icon}>Race:</Text>
+                </View>
+                <View style={styles.adcontainertype}>
+                    <Text style={styles.attributes}>{item.type}</Text>
+                    <Text style={{ marginRight: '10%' }}>{item.race}</Text>
+                </View>
+                <View style={styles.line}></View>
+                    <Text style={{ marginLeft: '10%', marginTop: '3%' }}>Card Description:</Text>
+                <View style={styles.descView}>
+                    <Text style={styles.descText}>{item.desc}</Text>
+                </View>
+            </Card>
+            )
+        } else {
+            return(
+                <Card style={styles.card}>
             <View style={styles.info}>
                 <Card.Title title="Card Information" titleStyle={styles.infotext}/>
             </View>
@@ -47,7 +77,14 @@ const DetailsCard = ({ route }) => {
             <View style={styles.descView}>
                 <Text style={styles.descText}>{item.desc}</Text>
             </View>
-        </Card>
+            </Card>
+            )
+        }
+    }
+    
+    return(
+        <ScrollView>
+            {renderWithType()}
         </ScrollView>
     )
 }
