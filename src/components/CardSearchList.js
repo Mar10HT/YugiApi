@@ -20,9 +20,9 @@ const CardSearchList = ({ card, navigation }) =>{
                 ListEmptyComponent={emptyFlatList}
                 renderItem={({ item }) => {
                     return(
-                        <TouchableOpacity key = {item.id} onPress={() => {navigation.navigate("Card Search", { item })}}>
+                        <TouchableOpacity style ={styles.text} key = {item.id} onPress={() => {navigation.navigate("Card Search", { item })}}>
                             <CardSearch name={item.name}  
-                            type={item.type} image={item.id} level={item.level}/>
+                            type={item.type} image={item.id} level={item.level} style ={styles.text}/>
                         </TouchableOpacity>
                     )
                 }}
@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop: 60,
         alignItems: 'center',
-    }
+    },
+    
 });
 
 export default CardSearchList;

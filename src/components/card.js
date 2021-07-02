@@ -50,8 +50,10 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent:'space-evenly',
-        height:300,
-        paddingBottom:20,
+        height:"43%",
+        borderColor: theme.colors.gray,
+        borderWidth:1, 
+        borderRadius: 25/2
         
     },
     name: {

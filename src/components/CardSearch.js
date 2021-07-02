@@ -10,7 +10,7 @@ const CardSearch = ({name, image, type, level}) =>{
             <CardImage image={image}/>
             <View style={styles.container2}>
                 <Card.Title title={name} style={styles.name} />
-                <Card.Content>
+                <Card.Content style={styles.content}>
                     <Text style={styles.text}>Level: {level}</Text>
                     <Text style={styles.text}>Card Type: {type}</Text>
                 </Card.Content>
@@ -51,7 +51,13 @@ const styles = StyleSheet.create({
     },
     text: {
         right: '11%'
-    }
+    },
+    content:{
+        display:"flex",
+        justifyContent:"center",
+        left:"25%",
+        width:"80%",
+    },
 });
 
 export default CardSearch;
