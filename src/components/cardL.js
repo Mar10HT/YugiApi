@@ -13,7 +13,7 @@ const CardList = ({ card, navigation }) =>{
     return(
         <View style={styles.container}>
             <FlatList 
-                data={""}
+                data={card.data}
                 keyExtractor={(item) => item.id.toString() }
                 showsVerticalScrollIndicator={true}
                 ListEmptyComponent={emptyFlatList}
@@ -21,7 +21,7 @@ const CardList = ({ card, navigation }) =>{
                     return(
                         <TouchableOpacity key = {item.id} onPress={() => {navigation.navigate("Card Details", { item })}}>
                             <Card desc = {item.desc} name={item.name}  
-                            type={item.type} race = {item.race} image={item.id} card={item}/>
+                            type={item.type} race = {item.race} image={item.id} />
                         </TouchableOpacity>
                     )
                 }}
