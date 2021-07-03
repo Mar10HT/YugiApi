@@ -5,7 +5,7 @@ import theme from "../theme";
 
 import HomeStackScreen from "./screens/HomeStack";
 import SearchCardScreen from "./screens/SearchCardScreen";
-import FavoriteCards from "./screens/Favorites";
+import FavoritesStackScreen from "./screens/FavoritesScreen";
 
 import { Entypo } from '@expo/vector-icons'; 
 import { FontAwesome } from '@expo/vector-icons'; 
@@ -43,7 +43,7 @@ const Tabs = () => {
             />
             <Tab.Screen 
                 name="Favorites" 
-                component={FavoriteCards} 
+                component={FavoritesStackScreen} 
                 options={{
                     tabBarLabel: '',
                     tabBarIcon: ({color}) => (

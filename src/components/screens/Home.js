@@ -21,7 +21,7 @@ const Home = ({ navigation }) =>{
     return(
         <View>
             <Title style={style.title}>Newest Cards</Title>
-            {card.meta ? <CardList card={card} navigation={navigation}/> 
+            {card.meta ? <CardList card={card} data={card.data} navigation={navigation}/> 
                 : <ActivityIndicator animating={true}/>}
         </View>
     );

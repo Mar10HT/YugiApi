@@ -9,8 +9,8 @@ export const handleFavorite = async (name) =>{
      alert(`${name.name} added to favorites`);
     
         
-     listOfCard = [...listOfCard, (name.name)];
-     await AsyncStorage.setItem(
+     listOfCard = [...listOfCard, (name)];
+     await AsyncStorage.clear(
       "favoriteCard",
       JSON.stringify(listOfCard)
      )
@@ -20,12 +20,6 @@ export const handleFavorite = async (name) =>{
 
 export const getFavorite = async() =>{
     const response = await AsyncStorage.getItem("favoriteCard");
-    let listOfCard = await JSON.parse(response) || [];
 
-    return listOfCard;
+    return response.text;
 }
-
-
-
-
-

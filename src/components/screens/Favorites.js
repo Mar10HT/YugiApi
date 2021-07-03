@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import TopBar from '../TopBar';
 import { getFavorite } from '../addFavorite';
 import { showFavorites } from '../../api';
+import CardList from '../cardL';
 
-const FavoriteCards = () => {
-    let favorite = getFavorite;
-    console.log(favorite);
+const favorites = getFavorite;
+
+console.log(getFavorite())
+
+const FavoriteCards = ({ navigation }) => {
+    const [card , setCard] = useState({});
+
+    const getCard = async () =>{
+        const response = await showFavorites(favorites);
+
+        setCard(response);
+    }
+
+    useEffect(() => {
+        getCard();
+    }, [])
+
     return(
         <View>
-            <TopBar/>
-            <Text style={styles.title}>Favorites!</Text>
+            {favorites.meta && favorites.map((card) => {
+                <Text></Text>
+            })}
             
         </View>
     )
