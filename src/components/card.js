@@ -4,16 +4,17 @@ import { Card } from 'react-native-paper';
 import theme from '../theme';
 import CardImage from './CardImage'
 import { IconButton,  } from 'react-native-paper';
+import { handleFavorite } from './addFavorite';
+
 
 
 const Cards = ({desc, name, image, type, race}) =>{
-    let favorite = false;
     return(
         <Card style= {styles.container}>
             <Card.Title title={name} style={styles.name} />
             <Card.Content>
             <CardImage image={image}/>
-            <IconButton icon = {favorite ? "star" : "star-outline"}  onPress = {(favorite) =>{favorite=true}} color = "orange" size = {38} style = {styles.button}/>
+            <IconButton icon = "star"  onPress = {() =>{handleFavorite({name})}} color = "orange" size = {38} style = {styles.button}/>
             <View style = {styles.info} >
                 <Text style= {styles.type}>Card Type: {type}</Text>
                 <Text style= {styles.race}>Race: {race}</Text>
@@ -53,7 +54,8 @@ const styles = StyleSheet.create({
         height:"43%",
         borderColor: theme.colors.gray,
         borderWidth:1, 
-        borderRadius: 25/2
+        borderRadius: 25/2,
+        padding:10
         
     },
     name: {

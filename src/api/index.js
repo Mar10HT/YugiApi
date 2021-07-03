@@ -24,7 +24,7 @@ export const fetchCards = async () =>{
 
 export const searchCard = async (card) => {
     try {
-        const endpoint = `${apiUrl}cardinfo.php?&fname=${card}`;
+        const endpoint = `${apiUrl}cardinfo.php?fname=${card}`;
 
         const response = await fetch(endpoint);
         const data = await response.json();
@@ -35,3 +35,15 @@ export const searchCard = async (card) => {
         console.log(error);
     }
 };
+
+export const showFavorites = async (favorites) =>{
+    try {
+        const endpoint = `${apiUrl}cardinfo.php?name=${favorites}`
+        const response = await fetch(endpoint);
+        const data = await response.json();
+
+        return data;
+    } catch (error) {
+        console.log(error)
+    }
+}
