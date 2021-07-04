@@ -1,16 +1,15 @@
 import React from 'react';
 import { FlatList, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Title } from 'react-native-paper';
-import CardSearch from "../components/CardSearch"
+import FavoriteCard from '../components/favoriteCard'
 import theme from "../theme";
 
-const CardSearchList = ({ card, navigation }) =>{
+const FavoriteCardList = ({ card, navigation }) =>{
     const emptyFlatList = (
         <View style={styles.title}>
             <Title>Card data not found :c</Title>
         </View>
     );
-
     return(
         <View style={styles.container}>
             <FlatList 
@@ -21,7 +20,7 @@ const CardSearchList = ({ card, navigation }) =>{
                 renderItem={({ item }) => {
                     return(
                         <TouchableOpacity style ={styles.text} key = {item.id} onPress={() => {navigation.navigate("Card Search", { item })}}>
-                            <CardSearch name={item.name}  
+                            <FavoriteCard name={item.name}  
                             type={item.type} image={item.id} style ={styles.text} race = {item.race}/>
                         </TouchableOpacity>
                     )
@@ -29,7 +28,7 @@ const CardSearchList = ({ card, navigation }) =>{
             />
         </View>
     )
-}
+};
 
 const styles = StyleSheet.create({
     container:{
@@ -46,5 +45,3 @@ const styles = StyleSheet.create({
     },
     
 });
-
-export default CardSearchList;

@@ -1,30 +1,45 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { getFavorites } from '../addFavorite';
-import { useFocusEffect } from '@react-navigation/core';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import CardList from '../cardL';
-import { showFavorites } from '../../api';
+import FavoriteCardList from '../FavoriteCardL'
+import getEnvVars from '../../../enviroment';
+import { Title } from 'react-native-paper';
+
+
+
+
+const {apiUrl} = getEnvVars()
 
 const FavoriteCards = ({ navigation }) => {
     const [card , setCard] = useState({});
    
     const getCard = async () =>{
-        
-        const favs = await AsyncStorage.getItem("favoritesCards")
-        const data = JSON.parse(favs)
-        const response = await showFavorites(data)
-        console.log(favs)
-            
-        
+        let list = [];
+        let final = [];
+        const favs = await AsyncStorage.getItem("favoritesCards");
+        const data = JSON.parse(favs);
+        for (let i = 0; i < data.length; i++) {
+            let string = data[i];
+            let repla = string.replace(/ /g, "%20");
+            list.push(`${apiUrl}cardinfo.php?name=${repla}`)
+        }
+        for (let i = 0; i < list.length; i++) {
+            const endpoint = `${list[i]}`
+            const response = await fetch(endpoint);
+            const data = await response.json();
+            final.push(data)
+        }
+        const response = final;
+        console.log(response);
         setCard(response);
+        
     }
 
     useEffect(() => {
         getCard();
     }, [])
 
-    //console.log(card);
+    console.log(card);
 
     return(
         <View>

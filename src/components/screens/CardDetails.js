@@ -4,7 +4,7 @@ import { Card, Title, Text } from "react-native-paper";
 import CardImage from '../CardImage'
 import theme from '../../theme';
 import { IconButton,  } from 'react-native-paper';
-import  handleFavorite  from '../addFavorite'
+import  { handleFavorite } from '../addFavorite'
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import { FontAwesome5 } from '@expo/vector-icons'; 
 

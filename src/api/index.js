@@ -34,16 +34,3 @@ export const searchCard = async (card) => {
     }
 };
 
-export const showFavorites = async (favorites) =>{
-    try {
-        const endpoint = `${apiUrl}cardinfo.php?name=${favorites}`
-        const response = await fetch(endpoint);
-        const data = await response.json();
-
-        //console.log(data); 
-
-        return data;
-    } catch (error) {
-        console.log(error)
-    }
-}

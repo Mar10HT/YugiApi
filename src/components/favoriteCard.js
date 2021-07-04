@@ -4,7 +4,7 @@ import { Card } from 'react-native-paper';
 import CardImage from './CardImageSearch'
 import theme from "../theme";
 
-const CardSearch = ({name, image, type, race}) =>{
+const FavoriteCard = ({name, image, type, race}) =>{
     return(
         <Card style= {styles.container}>
             <CardImage image={image}/>
@@ -18,6 +18,7 @@ const CardSearch = ({name, image, type, race}) =>{
          </Card>
          
          );
+
 }
 
 const styles = StyleSheet.create({
@@ -62,4 +63,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default CardSearch;
+export default FavoriteCard;
