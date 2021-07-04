@@ -4,7 +4,7 @@ import { Card } from 'react-native-paper';
 import theme from '../theme';
 import CardImage from './CardImage'
 import { IconButton,  } from 'react-native-paper';
-import { handleFavorite } from './addFavorite';
+import  { handleFavorite, clearFavorites } from './addFavorite';
 
 
 

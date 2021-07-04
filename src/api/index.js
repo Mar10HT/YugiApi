@@ -40,6 +40,8 @@ export const showFavorites = async (favorites) =>{
         const response = await fetch(endpoint);
         const data = await response.json();
 
+        //console.log(data); 
+
         return data;
     } catch (error) {
         console.log(error)

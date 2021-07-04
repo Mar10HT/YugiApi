@@ -4,7 +4,7 @@ import { Card, Title, Text } from "react-native-paper";
 import CardImage from '../CardImage'
 import theme from '../../theme';
 import { IconButton,  } from 'react-native-paper';
-import { handleFavorite } from '../addFavorite'
+import  handleFavorite  from '../addFavorite'
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import { FontAwesome5 } from '@expo/vector-icons'; 
 
@@ -19,7 +19,7 @@ const DetailsCard = ({ route }) => {
                         <Card.Title title="Card Information" titleStyle={styles.infotext}/>
                     </View>
                     <Card.Content>
-                        <IconButton icon = "star"  onPress = {() =>{handleFavorite(item)}} color = "orange" size = {38} style = {styles.button}/>
+                    <IconButton icon = "star"  onPress = {() =>{handleFavorite(item.name)}} color = "orange" size = {38} style = {styles.button}/>
                         <CardImage style={styles.image}
                             image={item.id}/>
                     </Card.Content>
