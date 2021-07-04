@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "YugiApi",
+    "name": "Millenium Database",
     "slug": "YugiApi",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/millenium-logo.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#150061"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,11 +22,11 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#150061"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/millenium-logo.png"
     }
   }
 }

@@ -1,33 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import { ActivityIndicator } from 'react-native-paper';
 import {Picker} from '@react-native-picker/picker';
-import { ActivityIndicator, Searchbar } from 'react-native-paper';
+import SearchBox from '../SearchBox';
 import { searchCard } from "../../api";
 import CardSearchList from "../CardSearchList";
 
 const SearchCard = ({ navigation }) => {
-    const [card , setCard] = useState("");
+    const [card , setCard] = useState([""]);
+    const [searchQuery, setSearchQuery] =  useState("");
+    const [selectedType, setSelectedType] = useState("all");
+
+    const filteredCards = () => {
+        card.filter(data =>(
+            data.name.toLowerCase().includes(searchQuery.toLowerCase())
+        ))
+    }
 
     const getCard = async () =>{
-        const response = await searchCard(card);
+        const response = await searchCard(searchQuery);
 
         setCard(response);
     }
 
     useEffect(() => {
         getCard();
-    }, [])
-
-    const [searchQuery, setSearchQuery] =  useState("");
-    const [selectedType, setSelectedType] = useState();
+    }, [searchQuery]);
 
     return(
         <View>
-            <Searchbar style={styles.searchbar}
-                placeholder="Search cards by name."
-                value={searchQuery}
-                onChangeText={setSearchQuery}
-            />
+            <SearchBox placeholder="Enter card name ..." value={searchQuery} onChangeText={setSearchQuery}/>
             <Text style={styles.cardType}>CardType</Text>
             <Picker style={styles.picker}
                 mode= "dropdown"
@@ -40,19 +42,12 @@ const SearchCard = ({ navigation }) => {
                 <Picker.Item label="Spell" value="spell" />
                 <Picker.Item label="Trap" value="trap" />
             </Picker>
-            <CardSearchList card={card} navigation={navigation}/> 
+            <CardSearchList card={card} data={filteredCards} navigation={navigation}/>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    searchbar: {
-        marginTop: 35,
-        marginHorizontal: 10,
-        borderWidth: 2,
-        borderColor: '#11007e',
-        borderRadius: 30,
-    },
     cardType: {
         fontSize: 20,
         marginTop: 40,

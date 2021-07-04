@@ -13,7 +13,7 @@ const CardList = ({ card, navigation }) =>{
     return(
         <View style={styles.container}>
             <FlatList 
-                data={""}
+                data={card.data}
                 keyExtractor={(item) => item.id.toString() }
                 showsVerticalScrollIndicator={true}
                 ListEmptyComponent={emptyFlatList}
