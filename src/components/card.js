@@ -44,8 +44,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.50,    
         shadowRadius: 12.35,
         elevation: 19,
-        height:650,
-        fontFamily:'yugi-Font'
+        height: 650,
         
     },
     info:{
@@ -56,7 +55,8 @@ const styles = StyleSheet.create({
         borderColor: theme.colors.gray,
         borderWidth:1, 
         borderRadius: 25/2,
-        padding:10
+        padding:10,
+        fontFamily:'yugi-Font'
         
     },
     name: {

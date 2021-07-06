@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
-import { Card, Title, Text } from "react-native-paper";
+import { Card, Text } from "react-native-paper";
 import CardImage from '../CardImage'
 import theme from '../../theme';
 import { IconButton,  } from 'react-native-paper';

@@ -19,7 +19,7 @@ const FavoriteCardList = ({ card, navigation }) =>{
                 ListEmptyComponent={emptyFlatList}
                 renderItem={({ item }) => {
                     return(
-                        <TouchableOpacity style ={styles.text} key = {item.id} onPress={() => {navigation.navigate("Card Search", { item })}}>
+                        <TouchableOpacity style ={styles.text} key = {item.id} onPress={() => {navigation.navigate("Card Details", { item })}}>
                             <FavoriteCard name={item.name}  
                             type={item.type} image={item.id} style ={styles.text} race = {item.race}/>
                         </TouchableOpacity>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 10,
         borderColor: theme.colors.red,
-        marginBottom: "67%"
+        marginBottom: "52%"
     },
     title: {
         flex: 1,
@@ -45,3 +45,5 @@ const styles = StyleSheet.create({
     },
     
 });
+
+export default FavoriteCardList;

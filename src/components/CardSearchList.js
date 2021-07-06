@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 10,
         borderColor: theme.colors.red,
-        marginBottom: "67%"
+        marginBottom: "20%"
     },
     title: {
         flex: 1,

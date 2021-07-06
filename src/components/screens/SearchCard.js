@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { ActivityIndicator } from 'react-native-paper';
-import {Picker} from '@react-native-picker/picker';
 import SearchBox from '../SearchBox';
 import { searchCard } from "../../api";
 import CardSearchList from "../CardSearchList";
@@ -9,8 +7,8 @@ import CardSearchList from "../CardSearchList";
 const SearchCard = ({ navigation }) => {
     const [card , setCard] = useState([""]);
     const [searchQuery, setSearchQuery] =  useState("");
-    const [selectedType, setSelectedType] = useState("all");
 
+    //funcion que filtra las cartas por su nombre
     const filteredCards = () => {
         card.filter(data =>(
             data.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -28,20 +26,10 @@ const SearchCard = ({ navigation }) => {
     }, [searchQuery]);
 
     return(
+        // Se le agrega en data el valor de la funcion creada "filteredCards" a la CardSearchList el contenido de las cartas filtradas, para ser mostradas dentro de la 
+        //flatlist.
         <View>
             <SearchBox placeholder="Enter card name ..." value={searchQuery} onChangeText={setSearchQuery}/>
-            <Text style={styles.cardType}>CardType</Text>
-            <Picker style={styles.picker}
-                mode= "dropdown"
-                selectedValue={selectedType}
-                onValueChange={(itemValue) =>
-                setSelectedType(itemValue)
-            }>
-                <Picker.Item label="All" value="all" />
-                <Picker.Item label="Monster" value="monster" />
-                <Picker.Item label="Spell" value="spell" />
-                <Picker.Item label="Trap" value="trap" />
-            </Picker>
             <CardSearchList card={card} data={filteredCards} navigation={navigation}/>
         </View>
     )
