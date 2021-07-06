@@ -1,11 +1,10 @@
 import React, { useState, useEffect} from 'react';
 import { StyleSheet, View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ActivityIndicator } from 'react-native-paper';
 import FavoriteCardList from '../FavoriteCardL'
 import getEnvVars from '../../../enviroment';
-import { clearFavorites } from '../addFavorite';
 import { Button, Title } from 'react-native-paper';
+import theme from '../../theme';
 
 const {apiUrl} = getEnvVars()
 
@@ -40,7 +39,6 @@ const FavoriteCards = ({ navigation }) => {
             <Title style={styles.title}>Favorite Cards</Title>
                 <View style={styles.container}>
                     <Button mode="contained" onPress={() => getCard()} style={styles.button}>Refresh</Button>
-                    <Button mode="contained" onPress={() => clearFavorites()} style={styles.button}>Clear</Button>
                 </View>
             <FavoriteCardList card={card} navigation={navigation}/>
         </View>
@@ -60,8 +58,10 @@ const styles = StyleSheet.create({
         marginHorizontal: "15%"
     },
     button: {
-        marginHorizontal: "5%"
-    }
+        marginHorizontal: "5%",
+        backgroundColor:theme.colors.red
+    },
+   
 });
 
 export default FavoriteCards;

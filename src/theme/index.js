@@ -11,6 +11,7 @@ const theme = {
     yellow: '#ffc100',
     shadow: "#66625c",
     gray: "#999999",
+    yellowClaro:"#FCEFC7"
   },
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Title } from 'react-native-paper';
 import FavoriteCard from '../components/favoriteCard'
-import theme from "../theme";
+
 
 const FavoriteCardList = ({ card, navigation }) =>{
     const emptyFlatList = (
@@ -33,9 +33,7 @@ const FavoriteCardList = ({ card, navigation }) =>{
 const styles = StyleSheet.create({
     container:{
         marginTop: 30,
-        borderWidth: 2,
-        borderRadius: 10,
-        borderColor: theme.colors.red,
+        
         marginBottom: "52%"
     },
     title: {

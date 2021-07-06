@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
         shadowRadius: 12.35,
         elevation: 19,
         height: 650,
+        marginBottom:"5%"
         
     },
     info:{
