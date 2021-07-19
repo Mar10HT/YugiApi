@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Title } from 'react-native-paper';
-import Card from "../components/card"
+import Card from './card'
 
 const CardList = ({ card, navigation }) =>{
     const emptyFlatList = (
